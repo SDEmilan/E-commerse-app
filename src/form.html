@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .error{
+            color:"red"
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script >
+        function submitclick(e){
+            var isvalid=true;
+             
+            const name=document.getElementById("name").value ;
+            const mob=document.getElementById("mob").value ;
+            const email=document.getElementById("email").value ;
+            const password=document.getElementById("password").value ;
+            const form=document.getElementById("myform")
+            console.log(name,mob,email,password,"00")
+            const error=document.getElementById("error")
+           
+            if(name==="" ){
+                error.textContent="name required"
+                isvalid=false
+            }else{
+                form.reset()
+            }
+          
+            
+        }
+          
+        
+    </script>
+</head>
+<body>
+    <form id="myform">
+        <dl>
+            <dt>Name</dt>
+            <dd><input type="text" placeholder="name" id="name" name="name" /></dd>
+            <div id="error" class="error"></div>
+            <dt>Mob</dt>
+            <dd><input type="text" placeholder="mob" id="mob" name="mob"/></dd>
+            <dt>Email</dt>
+            <dd><input type="email" placeholder="email" id="email" name="email" /></dd>
+            <dt>Password</dt>
+            <dd><input type="password" placeholder="password" id="password" name="password"/></dd>
+        </dl>
+        
+        <button type="button" onclick="submitclick()">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+    
+</body>
+</html>

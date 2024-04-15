@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            .error{
+                color:"red"
+            }
+        </style>
+        <Script>
+            function handlesubmit(){
+                event.preventDefault()
+                const userName=document.getElementById("userName").value
+                const userPassword=document.getElementById("Password").value
+                const errorName=document.getElementById("errorName")
+                const errorPassword=document.getElementById("errorPassword")
+
+                if(!userName){
+                    errorName.innerText="user name required";
+                    errorName=""
+                    return false ;
+                }
+                
+                if(!userPassword){
+                    errorPassword.innerText="user password required";
+                    return false ;
+                }
+                return true ;
+                // if(!errorName && !errorPassword){
+                //     errorName.innerText="user name required";
+                //     errorPassword.innerText="user password required";
+                //     return false ;
+                // } 
+                // return true ;
+            }
+        </Script>
+    </head>
+    <body>
+        <h1>Login form</h1>
+            <form onsubmit="handlesubmit()" >
+                <dl>
+                    <dt>
+                        UserName
+                    </dt>
+                    <dd>
+                        <input type="text" id="userName" name="userName"/>
+                         <div id="errorName" class="error"></div>    
+                    </dd>
+                    <dt>
+                        Password
+                    </dt>
+                    <dd>
+                        <input type="password" id="Password" name="Password" required placeholder="Pssword"/>
+                         <div id="errorPassword" class="error"></div>    
+                            
+                    </dd>
+                  </dl>
+                  <button type="submit">Login</button>
+            </form>
+
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        
+    </body>
+</html>
